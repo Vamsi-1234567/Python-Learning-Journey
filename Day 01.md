@@ -2,24 +2,24 @@
 
 Welcome to **Day 01 of my Python Learning Journey** 🐍🚀
 
-Day 01 is the starting point of my Python learning journey.  
-In this day, I learned the **basic structure of Python programs**, how Python executes instructions, how to use `print()`, and how to store information using **variables**.
+Day 01 is the starting point of my Python learning journey. In this day, I learned the **basic structure of Python programs**, how Python executes simple instructions, how to use `print()`, and how to store information using **variables**.
 
 The main goal of Day 01 was to understand the **fundamentals of Python programming** before moving to more advanced concepts.
 
 ---
 
-## 🎯 Day 01 Learning Goal
+# 🎯 Day 01 Learning Goal
 
 The main goal of Day 01 was to understand:
 
-- Python basic syntax
-- How Python programs execute
-- `print()` function
-- Variables
-- Storing data in variables
-- Comments
-- Basic programming structure
+- 🐍 Python basics
+- 📝 Basic Python syntax
+- 🖨️ `print()` function
+- 📦 Variables
+- 🔄 Variable assignment
+- 💬 Comments
+- 💾 Storing data in variables
+- ▶️ Basic program execution
 
 ---
 
@@ -31,20 +31,18 @@ Python is a programming language used to write instructions that a computer can 
 
 Python is beginner-friendly because its syntax is simple and easy to read.
 
-### Telugu + English Explanation
+Python ni use chesi manam computer ki instructions ivvachu.
 
-Python ante computer ki manam instructions ivvadaniki use chese programming language.
-
-Simple ga cheppali ante:
+Simple flow:
 
 ```text
-Manam problem ni solve cheyadaniki
-        ↓
-Python lo instructions rastam
-        ↓
-Python aa instructions ni execute chestundi
-        ↓
-Manaki output vastundi
+Problem
+   ↓
+Write Python Code
+   ↓
+Python Executes the Code
+   ↓
+Output
 ```
 
 Example:
@@ -59,7 +57,7 @@ Output:
 Hello Python
 ```
 
-Ikkada Python ki `Hello Python` ni screen meeda display cheyyamani instruction icham.
+Ikkada `print()` function ni use chesi `"Hello Python"` ni screen meeda display chesam.
 
 ---
 
@@ -67,7 +65,7 @@ Ikkada Python ki `Hello Python` ni screen meeda display cheyyamani instruction i
 
 **Syntax** ante Python code rayadaniki follow avvalsina basic rules.
 
-Python lo code clean ga and correct syntax tho rayali.
+Manam English language lo grammar follow chestam. Alage Python lo code rayetappudu Python syntax rules follow cheyali.
 
 Example:
 
@@ -81,33 +79,35 @@ Output:
 Hello
 ```
 
-### Telugu + English Explanation
-
-Syntax ante oka language lo code rayadaniki follow avvalsina rules.
-
-Manam English lo grammar follow chestam kada, alage Python lo kuda syntax rules follow cheyali.
-
 Correct syntax:
 
 ```python
 print("Hello")
 ```
 
-Wrong syntax:
+Incorrect syntax:
 
 ```python
 print("Hello"
 ```
 
-Second example lo closing `)` missing undi, kabatti Python error chupinchachu.
+Ikkada closing `)` missing undi. Kabatti Python error istundi.
+
+### Key Point
+
+```text
+Syntax
+   ↓
+Rules for writing Python code
+```
 
 ---
 
 # 3. 🖨️ `print()` Function
 
-`print()` Python lo screen meeda output display cheyadaniki use chestam.
+`print()` Python lo output ni screen meeda display cheyadaniki use chestam.
 
-## 💻 Basic Example
+Example:
 
 ```python
 print("Hello")
@@ -131,23 +131,9 @@ Output:
 Welcome to Python
 ```
 
-### Telugu + English Explanation
+`print()` ante simple ga **information ni screen meeda chupinchadam**.
 
-`print()` ante **screen meeda information chupinchadam**.
-
-Manam Python program run chesinappudu result ni user ki display cheyali ante `print()` use chestam.
-
-Example:
-
-```python
-print("Dog Food")
-```
-
-Output:
-
-```text
-Dog Food
-```
+Python program run chesinappudu result ni user ki display cheyadaniki `print()` use chestam.
 
 ---
 
@@ -171,19 +157,17 @@ Cat Food
 Pet Toy
 ```
 
-### Telugu + English Explanation
-
 Text ni Python lo **String** laga represent chestam.
 
-Text ni quotes madhya rayadam common format.
-
-Example:
+Examples:
 
 ```python
 "Dog Food"
 "Cat Food"
 "Pet Toy"
 ```
+
+Quotes use chesinappudu Python aa value ni text/string ga treat chestundi.
 
 ---
 
@@ -207,9 +191,7 @@ Output:
 100
 ```
 
-### Telugu + English Explanation
-
-Number ni quotes lekunda kuda print cheyachu.
+Number ni quotes lekunda rayachu.
 
 Example:
 
@@ -219,19 +201,24 @@ print(1200)
 
 Ikkada `1200` number.
 
-Kani:
+But:
 
 ```python
 print("1200")
 ```
 
-Ikkada `"1200"` text/string laga treat avtundi.
+Ikkada `"1200"` text/string.
 
-Day 01 lo important point:
+Important difference:
 
 ```text
-1200    → Number
-"1200"  → Text
+1200
+↓
+Number
+
+"1200"
+↓
+Text / String
 ```
 
 ---
@@ -250,18 +237,18 @@ price = 1200
 Ikkada:
 
 ```text
-product → Variable
-"Dog Food" → Stored Value
+product
+   ↓
+"Dog Food"
 
-price → Variable
-1200 → Stored Value
+price
+   ↓
+1200
 ```
 
-### Telugu + English Explanation
+Variable ni oka **box/container** laga imagine cheyachu.
 
-Variable ante oka **container / box** laga think cheyachu.
-
-Manam oka value ni future lo use cheyali ante danini variable lo store chestam.
+Manam oka value ni future lo use cheyali ante aa value ni variable lo store chestam.
 
 Example:
 
@@ -269,12 +256,12 @@ Example:
 product = "Dog Food"
 ```
 
-Ante:
+Meaning:
 
 ```text
 product
    ↓
-"Dog Food"
+Dog Food
 ```
 
 Alage:
@@ -283,7 +270,7 @@ Alage:
 price = 1200
 ```
 
-Ante:
+Meaning:
 
 ```text
 price
@@ -314,8 +301,6 @@ Dog Food
 1200
 ```
 
-### Telugu + English Explanation
-
 First manam values ni variables lo store chesam:
 
 ```python
@@ -336,7 +321,7 @@ Python variable lo unna value ni read chesi output lo display chestundi.
 
 # 8. 🔄 Variable Assignment
 
-Variable create chesi value assign cheyadam ni **variable assignment** antam.
+Variable create chesi value assign cheyadam ni **Variable Assignment** antam.
 
 Example:
 
@@ -354,9 +339,7 @@ price    → 1200
 quantity → 2
 ```
 
-### Telugu + English Explanation
-
-`=` symbol ni variable ki value assign cheyadaniki use chestam.
+`=` symbol ni value ni variable ki assign cheyadaniki use chestam.
 
 Example:
 
@@ -364,21 +347,31 @@ Example:
 price = 1200
 ```
 
-Idi:
+Meaning:
 
 ```text
 price ki 1200 value assign chey
 ```
 
-ani meaning.
+Another example:
+
+```python
+quantity = 2
+```
+
+Meaning:
+
+```text
+quantity ki 2 value assign chey
+```
 
 ---
 
-# 9. 🧠 Variable Naming
+# 9. 🏷️ Variable Naming
 
 Variables ki meaningful names use cheyadam important.
 
-Example:
+Good example:
 
 ```python
 product = "Dog Food"
@@ -388,7 +381,7 @@ quantity = 2
 
 Ivi easy ga understand cheyachu.
 
-Instead of:
+Less meaningful example:
 
 ```python
 x = "Dog Food"
@@ -396,15 +389,13 @@ y = 1200
 z = 2
 ```
 
-Meaningful names better:
+Better approach:
 
 ```python
 product = "Dog Food"
 price = 1200
 quantity = 2
 ```
-
-### Telugu + English Explanation
 
 Variable name chustene aa variable lo emi store chesamo easy ga ardham avvali.
 
@@ -433,13 +424,11 @@ product = "Dog Food"
 price = 1200
 ```
 
-### Telugu + English Explanation
+Python comments ni execute cheyadu.
 
-Comment ni Python execute cheyadu.
+Comments mainly developer ki code easy ga understand avvadaniki use avtayi.
 
-Comment mainly developer ki code ardham avvadaniki use avtundi.
-
-Example:
+Another example:
 
 ```python
 # Store product name
@@ -478,15 +467,23 @@ product = "Dog Food"
 price = 1200
 ```
 
-### Telugu + English Explanation
-
-Manam today code rasina taruvata konni days/months taruvata malli code chuste konni lines enduku rasamo marchipovachu.
+Manam code rasina taruvata konni days or months tarvata malli code chuste, konni lines enduku rasamo marchipovachu.
 
 Comments unte code purpose easy ga gurthostundi.
 
+Comments:
+
+```text
+Help developers understand code
+          ↓
+Make code easier to read
+          ↓
+Useful for future reference
+```
+
 ---
 
-# 12. 🧩 Storing Real-World Data
+# 12. 💾 Storing Real-World Data
 
 Day 01 lo real-world example ga product information ni variables lo store chesanu.
 
@@ -503,8 +500,6 @@ Ikkada:
 product → Dog Food
 price   → 1200
 ```
-
-### Telugu + English Explanation
 
 Real-world applications lo information ni variables lo store cheyadam chala important.
 
@@ -589,11 +584,9 @@ Pet Toy
 
 ---
 
-# 💡 Understanding the Code
+# 💡 Understanding the Code Step by Step
 
-Let's understand the above code step by step.
-
-### Step 1 — Store Product
+## Step 1 — Store Product
 
 ```python
 product1 = "Dog Food"
@@ -607,7 +600,9 @@ product1
 Dog Food
 ```
 
-### Step 2 — Store Price
+---
+
+## Step 2 — Store Price
 
 ```python
 price1 = 1200
@@ -621,7 +616,9 @@ price1
 1200
 ```
 
-### Step 3 — Display Product
+---
+
+## Step 3 — Display Product
 
 ```python
 print(product1)
@@ -633,7 +630,9 @@ Output:
 Dog Food
 ```
 
-### Step 4 — Display Price
+---
+
+## Step 4 — Display Price
 
 ```python
 print(price1)
@@ -649,17 +648,17 @@ Output:
 
 # 🧠 Important Python Concepts from Day 01
 
-## Variable
+## 📦 Variable
 
 ```python
 price = 1200
 ```
 
-A variable stores information.
+Variable stores information.
 
 ---
 
-## Value
+## 💾 Value
 
 ```python
 1200
@@ -669,7 +668,7 @@ The actual information stored inside the variable.
 
 ---
 
-## Assignment Operator
+## 🔄 Assignment Operator
 
 ```python
 =
@@ -685,7 +684,7 @@ price = 1200
 
 ---
 
-## Print Function
+## 🖨️ Print Function
 
 ```python
 print()
@@ -701,7 +700,7 @@ print(price)
 
 ---
 
-## Comment
+## 💬 Comment
 
 ```python
 # This is a comment
@@ -712,8 +711,6 @@ Used to add notes or explanations inside code.
 ---
 
 # 🔍 Python Execution Flow
-
-Day 01 lo Python code ela execute avtundo basic ga understand chesanu.
 
 Example:
 
@@ -770,11 +767,9 @@ Product: Dog Food
 Price: 1200
 ```
 
-### Telugu + English Explanation
-
 Ikkada real-world product information ni Python variables lo store chesi, `print()` function tho display chesanu.
 
-Idi future lo:
+Ee basic concept future lo:
 
 ```text
 Product Management
@@ -788,7 +783,7 @@ Inventory
 Data Analysis
 ```
 
-lanti applications ki basic foundation.
+lanti applications ki foundation ga use avtundi.
 
 ---
 
@@ -798,10 +793,11 @@ lanti applications ki basic foundation.
 
 ```python
 product = "Dog Food"
+
 print(product)
 ```
 
-Expected Output:
+### Output
 
 ```text
 Dog Food
@@ -813,10 +809,11 @@ Dog Food
 
 ```python
 price = 1200
+
 print(price)
 ```
 
-Expected Output:
+### Output
 
 ```text
 1200
@@ -834,7 +831,7 @@ print(product)
 print(price)
 ```
 
-Expected Output:
+### Output
 
 ```text
 Dog Food
@@ -855,7 +852,7 @@ print(price)
 print(quantity)
 ```
 
-Expected Output:
+### Output
 
 ```text
 Dog Food
@@ -888,35 +885,45 @@ Price: 1200
 
 # 🧠 What I Understood in Day 01
 
-Day 01 lo nenu following concepts understand chesanu:
-
-### 1. Python Basics
+## 1. Python Basics
 
 Python programming language tho computer ki instructions ivvachu.
 
-### 2. Basic Syntax
+---
+
+## 2. Basic Syntax
 
 Python code correct syntax tho rayali.
 
-### 3. `print()`
+---
+
+## 3. `print()`
 
 Output ni screen meeda display cheyadaniki `print()` use chestam.
 
-### 4. Variables
+---
+
+## 4. Variables
 
 Data ni store cheyadaniki variables use chestam.
 
-### 5. Assignment
+---
+
+## 5. Assignment
 
 `=` operator tho value ni variable ki assign chestam.
 
-### 6. Comments
+---
+
+## 6. Comments
 
 `#` use chesi code gurinchi notes rayachu.
 
-### 7. Real-World Data
+---
 
-Product name, price lanti information ni variables lo store cheyachu.
+## 7. Real-World Data
+
+Product name, price, quantity lanti information ni variables lo store cheyachu.
 
 ---
 
@@ -954,11 +961,15 @@ Comment
 print("Hello")
 ```
 
+---
+
 ## Print Number
 
 ```python
 print(1200)
 ```
+
+---
 
 ## Create Variable
 
@@ -966,17 +977,23 @@ print(1200)
 price = 1200
 ```
 
+---
+
 ## Store Text
 
 ```python
 product = "Dog Food"
 ```
 
+---
+
 ## Print Variable
 
 ```python
 print(product)
 ```
+
+---
 
 ## Comment
 
@@ -1031,13 +1048,18 @@ product = "Dog Food"
 Here:
 
 ```text
-product   → Variable
-"Dog Food" → Value
+product
+   ↓
+Variable
+
+"Dog Food"
+   ↓
+Value
 ```
 
 ---
 
-# 💭 My Day 01 Learning in Telugu + English
+# 💭 My Day 01 Learning
 
 Day 01 na Python journey ki **basic foundation**.
 
@@ -1045,7 +1067,7 @@ Ee day lo nenu Python ante enti, basic syntax ela use cheyali, `print()` functio
 
 Starting lo simple ga anipinchina, ee concepts future Python programming ki chala important.
 
-Example:
+Learning progression:
 
 ```text
 Variables
@@ -1088,23 +1110,15 @@ By completing Day 01, I learned:
 
 ---
 
-# 📝 What I Learned — Day 01
+# 📝 Final Learning Summary
 
-### English
-
-I learned the basic structure of Python programs and how Python executes simple instructions.
-
-I learned how to use `print()` to display output, how to create variables, how to store information inside variables, and how to use comments to explain code.
-
-I also practiced these concepts using simple **Pet Shop / Life Care Pet Zone** examples.
-
-### Telugu + English
-
-Nenu Day 01 lo Python programming yokka basic foundation nerchukunnanu.
+Day 01 lo nenu Python programming yokka basic foundation nerchukunnanu.
 
 `print()` use chesi output display cheyadam, variables create cheyadam, variables lo information store cheyadam, `=` operator tho values assign cheyadam, and comments use cheyadam practice chesanu.
 
-Real-world example ga **Pet Shop / Life Care Pet Zone** products ni use chesi practice chesanu.
+Real-world example ga **Pet Shop / Life Care Pet Zone** products ni use chesi Python basics practice chesanu.
+
+I learned that even simple concepts like variables and `print()` are important building blocks for writing larger Python programs.
 
 ---
 
@@ -1145,11 +1159,11 @@ In Day 02, I will learn about different types of data used in Python:
 - `float`
 - `bool`
 
-and understand how Python handles different types of values.
+I will also understand how Python handles different types of values.
 
 ---
 
-## 🐍 Python Learning Journey
+# 🐍 Python Learning Journey
 
 **Day 01 → Completed ✅**
 
