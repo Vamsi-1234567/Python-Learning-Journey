@@ -4,47 +4,35 @@
 
 Today we will learn **JSON Data Processing in Python**.
 
-After learning:
+Day 19 lo manam **CSV files** tho work chesam.
 
-```text
-Day 18 → File Handling
-Day 19 → CSV Data Processing
-```
+Ippudu manam **JSON** data ni read, parse, process, modify, and analyze cheyyadam nerchukundam.
 
-today we move to another very important data format:
-
-```text
-JSON
-```
-
-JSON is widely used for:
-
-- APIs
-- Web applications
-- Data exchange
-- Configuration files
-- Data Engineering
-- Cloud applications
+JSON is very important in **Data Engineering** because APIs, applications, websites, and many data systems JSON format lo data exchange chestayi.
 
 Today we will learn:
 
 - What is JSON?
+- Why JSON is important
 - JSON structure
-- JSON objects
-- JSON arrays
-- Python dictionary ↔ JSON
-- `json` module
+- Objects and arrays
+- JSON keys and values
+- Python `json` module
 - `json.loads()`
 - `json.dumps()`
 - `json.load()`
 - `json.dump()`
-- Reading JSON files
-- Writing JSON files
-- Processing JSON data
-- Filtering JSON data
-- Calculating revenue
-- Exception handling
-- Business analysis
+- JSON string → Python object
+- Python object → JSON string
+- JSON file → Python object
+- Python object → JSON file
+- List of dictionaries
+- JSON + functions
+- JSON + filtering
+- JSON + sorting
+- JSON + business analysis
+- JSON + Exception Handling
+- API and Data Engineering connection
 
 ---
 
@@ -56,87 +44,9 @@ JSON stands for:
 JavaScript Object Notation
 ```
 
-JSON is a common format used to store and exchange structured data.
+JSON is a lightweight format used to store and exchange data.
 
-Example:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
-```
-
-This looks very similar to a Python dictionary.
-
-Python:
-
-```python
-product = {
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
-```
-
-JSON:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
-```
-
-The structure is similar, but JSON is a **data format**, while a Python dictionary is a Python data structure.
-
----
-
-# 2️⃣ Why JSON is Important?
-
-JSON is extremely common when working with APIs.
-
-For example, an API might return:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
-```
-
-Python can read this data and process it.
-
-A common workflow is:
-
-```text
-API
- ↓
-JSON
- ↓
-Python
- ↓
-Data Processing
- ↓
-Database
-```
-
-This is very important for Data Engineering.
-
----
-
-# 3️⃣ Basic JSON Structure
-
-A JSON object uses:
-
-```text
-key : value
-```
-
-Example:
+Simple JSON example:
 
 ```json
 {
@@ -159,64 +69,9 @@ Quantity → Key
 2        → Value
 ```
 
-This is similar to a Python dictionary.
+JSON chusthe Python dictionary laga kanipistundi.
 
----
-
-# 4️⃣ JSON Data Types
-
-JSON supports common data types:
-
-```text
-String
-Number
-Boolean
-Object
-Array
-Null
-```
-
-Example:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2,
-    "Available": true
-}
-```
-
-Here:
-
-```text
-"Dog Food" → String
-1200       → Number
-2          → Number
-true       → Boolean
-```
-
----
-
-# 5️⃣ JSON Object
-
-A JSON object uses:
-
-```text
-{ }
-```
-
-Example:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
-```
-
-Python equivalent:
+Python:
 
 ```python
 product = {
@@ -226,15 +81,109 @@ product = {
 }
 ```
 
+JSON:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+```
+
+Syntax similar ga unna, JSON is a **data interchange format**, Python dictionary is a **Python data structure**.
+
 ---
 
-# 6️⃣ JSON Array
+# 2️⃣ Why JSON is Important?
 
-A JSON array uses:
+Real-world applications madhya data exchange kosam JSON chala common.
+
+Example:
 
 ```text
-[ ]
+Application
+    ↓
+API
+    ↓
+JSON
+    ↓
+Python
+    ↓
+Data Processing
 ```
+
+For example, oka online store product API ila data return cheyyachu:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+```
+
+Python aa JSON data ni read chesi analysis cheyyagaladu.
+
+---
+
+# 3️⃣ JSON Basic Structure
+
+JSON mainly two important structures ni use chestundi:
+
+```text
+Object
+Array
+```
+
+Python lo roughly:
+
+```text
+JSON Object → Python Dictionary
+JSON Array  → Python List
+```
+
+---
+
+# 4️⃣ JSON Object
+
+JSON object `{ }` brackets tho represent chestam.
+
+Example:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+```
+
+Idi oka product information.
+
+Structure:
+
+```text
+{
+    Key : Value
+}
+```
+
+Multiple key-value pairs:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+```
+
+---
+
+# 5️⃣ JSON Array
+
+JSON array `[ ]` brackets tho represent chestam.
 
 Example:
 
@@ -242,40 +191,33 @@ Example:
 [
     "Dog Food",
     "Cat Food",
-    "Treats",
-    "Bones"
+    "Treats"
 ]
 ```
 
-This is similar to a Python list.
-
-Python:
+Python equivalent:
 
 ```python
-products = [
-    "Dog Food",
-    "Cat Food",
-    "Treats",
-    "Bones"
-]
-```
-
-JSON:
-
-```json
 [
     "Dog Food",
     "Cat Food",
-    "Treats",
-    "Bones"
+    "Treats"
 ]
+```
+
+So:
+
+```text
+JSON Array
+    ↓
+Python List
 ```
 
 ---
 
-# 7️⃣ JSON List of Objects
+# 6️⃣ List of JSON Objects
 
-This is very important for Data Engineering.
+Real-world data lo multiple records untayi.
 
 Example:
 
@@ -295,49 +237,57 @@ Example:
         "Name": "Treats",
         "Price": 300,
         "Quantity": 5
-    },
-    {
-        "Name": "Bones",
-        "Price": 500,
-        "Quantity": 4
     }
 ]
 ```
 
-This is equivalent to a Python:
+Python lo idi:
 
-```text
-List of Dictionaries
+```python
+list of dictionaries
 ```
 
-So the concepts from Day 12–16 are directly useful here.
+This is exactly the structure manam previous days lo practice chesam.
 
 ---
 
-# 8️⃣ Python `json` Module
+# 7️⃣ Python `json` Module
 
-Python provides a built-in module:
+Python lo JSON processing kosam built-in module undi:
 
 ```python
 json
 ```
 
-Import it:
+Import cheyyali:
 
 ```python
 import json
 ```
 
-The module provides functions for converting between Python data and JSON.
+External package install cheyyalsina avasaram ledu.
 
-Important functions:
+---
 
-```text
-json.loads()
-json.dumps()
-json.load()
-json.dump()
+# 8️⃣ JSON String
+
+First JSON data ni Python string lo store cheddam.
+
+```python
+import json
+
+data = '''
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+'''
 ```
+
+Ikkada `data` is a Python string.
+
+JSON structure string lopala undi.
 
 ---
 
@@ -346,19 +296,23 @@ json.dump()
 `loads()` means:
 
 ```text
-Load String
+JSON String → Python Object
 ```
-
-It converts a JSON string into a Python object.
 
 Example:
 
 ```python
 import json
 
-json_data = '{"Name": "Dog Food", "Price": 1200}'
+data = '''
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2
+}
+'''
 
-product = json.loads(json_data)
+product = json.loads(data)
 
 print(product)
 ```
@@ -366,22 +320,38 @@ print(product)
 Output:
 
 ```text
-{'Name': 'Dog Food', 'Price': 1200}
+{'Name': 'Dog Food', 'Price': 1200, 'Quantity': 2}
 ```
 
-Now the JSON string has become a Python dictionary.
+JSON object Python dictionary ga convert ayyindi.
 
 ---
 
-# 🔟 JSON String → Python Dictionary
+# 🔟 Understanding `loads()`
+
+Remember:
+
+```text
+loads
+  ↓
+Load String
+```
+
+Syntax:
 
 ```python
-import json
+json.loads(json_string)
+```
 
-json_data = '{"Name": "Dog Food", "Price": 1200, "Quantity": 2}'
+Use when JSON data already Python string form lo unte.
 
-product = json.loads(json_data)
+---
 
+# 1️⃣1️⃣ Access JSON Data
+
+`json.loads()` taruvata manaki Python dictionary vastundi.
+
+```python
 print(product["Name"])
 print(product["Price"])
 print(product["Quantity"])
@@ -395,21 +365,174 @@ Dog Food
 2
 ```
 
-Flow:
+Now normal Python dictionary laga process cheyyachu.
+
+---
+
+# 1️⃣2️⃣ JSON List Example
+
+```python
+import json
+
+data = '''
+[
+    {"Name": "Dog Food", "Price": 1200, "Quantity": 2},
+    {"Name": "Cat Food", "Price": 900, "Quantity": 3},
+    {"Name": "Treats", "Price": 300, "Quantity": 5}
+]
+'''
+
+products = json.loads(data)
+
+print(products)
+```
+
+Output:
+
+```text
+[
+    {'Name': 'Dog Food', 'Price': 1200, 'Quantity': 2},
+    {'Name': 'Cat Food', 'Price': 900, 'Quantity': 3},
+    {'Name': 'Treats', 'Price': 300, 'Quantity': 5}
+]
+```
+
+Now:
 
 ```text
 JSON String
      ↓
 json.loads()
      ↓
-Python Dictionary
+Python List
+     ↓
+Dictionaries
 ```
 
 ---
 
-# 1️⃣1️⃣ `json.dumps()`
+# 1️⃣3️⃣ Loop Through JSON Data
 
-`dumps()` converts Python data into a JSON string.
+```python
+import json
+
+data = '''
+[
+    {"Name": "Dog Food", "Price": 1200, "Quantity": 2},
+    {"Name": "Cat Food", "Price": 900, "Quantity": 3},
+    {"Name": "Treats", "Price": 300, "Quantity": 5}
+]
+'''
+
+products = json.loads(data)
+
+for product in products:
+
+    print(product["Name"])
+```
+
+Output:
+
+```text
+Dog Food
+Cat Food
+Treats
+```
+
+JSON data convert ayyaka normal Python loops use cheyyachu.
+
+---
+
+# 1️⃣4️⃣ Calculate Revenue from JSON
+
+Business Rule:
+
+```text
+Revenue = Price × Quantity
+```
+
+Example:
+
+```python
+import json
+
+data = '''
+[
+    {"Name": "Dog Food", "Price": 1200, "Quantity": 2},
+    {"Name": "Cat Food", "Price": 900, "Quantity": 3},
+    {"Name": "Treats", "Price": 300, "Quantity": 5}
+]
+'''
+
+products = json.loads(data)
+
+for product in products:
+
+    revenue = (
+        product["Price"]
+        * product["Quantity"]
+    )
+
+    print(
+        product["Name"],
+        revenue
+    )
+```
+
+Output:
+
+```text
+Dog Food 2400
+Cat Food 2700
+Treats 1500
+```
+
+---
+
+# 1️⃣5️⃣ Calculate Total Revenue
+
+```python
+total_revenue = 0
+
+for product in products:
+
+    revenue = (
+        product["Price"]
+        * product["Quantity"]
+    )
+
+    total_revenue += revenue
+
+print("Total Revenue:", total_revenue)
+```
+
+Output:
+
+```text
+Total Revenue: 6600
+```
+
+Calculation:
+
+```text
+Dog Food = 1200 × 2 = 2400
+Cat Food = 900 × 3 = 2700
+Treats   = 300 × 5 = 1500
+
+Total = 6600
+```
+
+---
+
+# 1️⃣6️⃣ `json.dumps()`
+
+Now reverse operation chuddam.
+
+`dumps()` means:
+
+```text
+Python Object → JSON String
+```
 
 Example:
 
@@ -422,9 +545,9 @@ product = {
     "Quantity": 2
 }
 
-json_data = json.dumps(product)
+data = json.dumps(product)
 
-print(json_data)
+print(data)
 ```
 
 Output:
@@ -433,43 +556,60 @@ Output:
 {"Name": "Dog Food", "Price": 1200, "Quantity": 2}
 ```
 
-Flow:
+Remember:
 
 ```text
-Python Dictionary
-       ↓
-json.dumps()
-       ↓
-JSON String
+loads() → JSON → Python
+dumps() → Python → JSON
 ```
 
 ---
 
-# 1️⃣2️⃣ Pretty JSON
+# 1️⃣7️⃣ `loads()` vs `dumps()`
 
-We can make JSON easier to read using:
+Very important:
 
-```python
-indent=4
+| Function | Conversion |
+|---|---|
+| `json.loads()` | JSON String → Python |
+| `json.dumps()` | Python → JSON String |
+| `json.load()` | JSON File → Python |
+| `json.dump()` | Python → JSON File |
+
+Easy way to remember:
+
+```text
+s = String
 ```
 
-Example:
+So:
+
+```text
+loads()  → String input
+dumps()  → String output
+```
+
+---
+
+# 1️⃣8️⃣ Pretty JSON Using `indent`
+
+By default:
 
 ```python
-import json
+data = json.dumps(product)
+```
 
-product = {
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
+output single line lo untundi.
 
-json_data = json.dumps(
+Readable format kosam:
+
+```python
+data = json.dumps(
     product,
     indent=4
 )
 
-print(json_data)
+print(data)
 ```
 
 Output:
@@ -482,26 +622,53 @@ Output:
 }
 ```
 
-This is called **pretty printing**.
+`indent=4` JSON ni readable format lo display chestundi.
 
 ---
 
-# 1️⃣3️⃣ `json.load()`
+# 1️⃣9️⃣ JSON File
 
-There is an important difference:
+JSON data ni file lo store cheyyachu.
 
-```text
-loads() → JSON string
-load()  → JSON file
-```
-
-If we have:
+Example file:
 
 ```text
 products.json
 ```
 
-we can read it using:
+Contents:
+
+```json
+[
+    {
+        "Name": "Dog Food",
+        "Price": 1200,
+        "Quantity": 2
+    },
+    {
+        "Name": "Cat Food",
+        "Price": 900,
+        "Quantity": 3
+    },
+    {
+        "Name": "Treats",
+        "Price": 300,
+        "Quantity": 5
+    }
+]
+```
+
+---
+
+# 2️⃣0️⃣ Reading JSON File Using `json.load()`
+
+JSON file ni read cheyyadaniki:
+
+```python
+json.load()
+```
+
+Example:
 
 ```python
 import json
@@ -513,48 +680,124 @@ with open("products.json", "r") as file:
 print(products)
 ```
 
----
-
-# 1️⃣4️⃣ `json.dump()`
-
-Similarly:
+Output:
 
 ```text
-dumps() → JSON string
-dump()  → JSON file
+[
+    {'Name': 'Dog Food', 'Price': 1200, 'Quantity': 2},
+    {'Name': 'Cat Food', 'Price': 900, 'Quantity': 3},
+    {'Name': 'Treats', 'Price': 300, 'Quantity': 5}
+]
+```
+
+---
+
+# 2️⃣1️⃣ `json.load()` Meaning
+
+Remember:
+
+```text
+load()
+ ↓
+File → Python
 ```
 
 Example:
 
 ```python
+products = json.load(file)
+```
+
+JSON file data Python object ga convert avutundi.
+
+---
+
+# 2️⃣2️⃣ Loop Through JSON File
+
+```python
 import json
 
-product = {
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
-}
+with open("products.json", "r") as file:
 
-with open("product.json", "w") as file:
+    products = json.load(file)
+
+
+for product in products:
+
+    print(
+        product["Name"],
+        product["Price"]
+    )
+```
+
+Output:
+
+```text
+Dog Food 1200
+Cat Food 900
+Treats 300
+```
+
+---
+
+# 2️⃣3️⃣ Writing JSON File Using `json.dump()`
+
+Python data:
+
+```python
+products = [
+    {
+        "Name": "Dog Food",
+        "Price": 1200,
+        "Quantity": 2
+    },
+    {
+        "Name": "Cat Food",
+        "Price": 900,
+        "Quantity": 3
+    }
+]
+```
+
+Write to JSON file:
+
+```python
+import json
+
+with open("products.json", "w") as file:
 
     json.dump(
-        product,
+        products,
         file,
         indent=4
     )
 ```
 
-This creates:
+Now `products.json` contains formatted JSON.
+
+---
+
+# 2️⃣4️⃣ `json.dump()` Meaning
+
+Remember:
 
 ```text
-product.json
+Python Object
+      ↓
+json.dump()
+      ↓
+JSON File
+```
+
+Example:
+
+```python
+json.dump(products, file, indent=4)
 ```
 
 ---
 
-# 1️⃣5️⃣ Creating a JSON File
-
-Let's create product data.
+# 2️⃣5️⃣ Complete JSON File Write
 
 ```python
 import json
@@ -591,58 +834,9 @@ with open("products.json", "w") as file:
     )
 ```
 
-Now the JSON file contains:
-
-```json
-[
-    {
-        "Name": "Dog Food",
-        "Price": 1200,
-        "Quantity": 2
-    },
-    {
-        "Name": "Cat Food",
-        "Price": 900,
-        "Quantity": 3
-    },
-    {
-        "Name": "Treats",
-        "Price": 300,
-        "Quantity": 5
-    },
-    {
-        "Name": "Bones",
-        "Price": 500,
-        "Quantity": 4
-    }
-]
-```
-
 ---
 
-# 1️⃣6️⃣ Reading JSON File
-
-```python
-import json
-
-with open("products.json", "r") as file:
-
-    products = json.load(file)
-
-print(products)
-```
-
-Now:
-
-```python
-products
-```
-
-is a Python list containing dictionaries.
-
----
-
-# 1️⃣7️⃣ Loop Through JSON Data
+# 2️⃣6️⃣ Read JSON and Calculate Total Stock
 
 ```python
 import json
@@ -652,106 +846,6 @@ with open("products.json", "r") as file:
     products = json.load(file)
 
 
-for product in products:
-
-    print(product["Name"])
-```
-
-Output:
-
-```text
-Dog Food
-Cat Food
-Treats
-Bones
-```
-
----
-
-# 1️⃣8️⃣ Access Price
-
-```python
-for product in products:
-
-    print(
-        product["Name"],
-        product["Price"]
-    )
-```
-
-Output:
-
-```text
-Dog Food 1200
-Cat Food 900
-Treats 300
-Bones 500
-```
-
----
-
-# 1️⃣9️⃣ Calculate Revenue
-
-Business Rule:
-
-```text
-Revenue = Price × Quantity
-```
-
-```python
-for product in products:
-
-    revenue = (
-        product["Price"]
-        * product["Quantity"]
-    )
-
-    print(
-        product["Name"],
-        revenue
-    )
-```
-
-Output:
-
-```text
-Dog Food 2400
-Cat Food 2700
-Treats 1500
-Bones 2000
-```
-
----
-
-# 2️⃣0️⃣ Total Revenue
-
-```python
-total_revenue = 0
-
-for product in products:
-
-    revenue = (
-        product["Price"]
-        * product["Quantity"]
-    )
-
-    total_revenue += revenue
-
-
-print("Total Revenue:", total_revenue)
-```
-
-Output:
-
-```text
-Total Revenue: 8600
-```
-
----
-
-# 2️⃣1️⃣ Total Stock
-
-```python
 total_stock = 0
 
 for product in products:
@@ -770,86 +864,50 @@ Total Stock: 14
 
 ---
 
-# 2️⃣2️⃣ Expensive Products
+# 2️⃣7️⃣ JSON + Functions
 
-Business Rule:
+Day 10–11 lo manam functions nerchukunnam.
 
-```text
-Price >= 1000
+Now JSON data tho function use cheddam.
+
+```python
+def calculate_revenue(product):
+
+    return (
+        product["Price"]
+        * product["Quantity"]
+    )
 ```
+
+Use:
 
 ```python
 for product in products:
 
-    if product["Price"] >= 1000:
+    revenue = calculate_revenue(product)
 
-        print(
-            "Expensive:",
-            product["Name"]
-        )
+    print(
+        product["Name"],
+        revenue
+    )
 ```
 
 Output:
 
 ```text
-Expensive: Dog Food
+Dog Food 2400
+Cat Food 2700
+Treats 1500
+Bones 2000
 ```
 
 ---
 
-# 2️⃣3️⃣ Low Stock Products
+# 2️⃣8️⃣ JSON + Filtering
 
-Business Rule:
+Day 15–16 concepts ni JSON tho combine cheddam.
 
-```text
-Quantity < 3
-```
-
-```python
-for product in products:
-
-    if product["Quantity"] < 3:
-
-        print(
-            "Low Stock:",
-            product["Name"]
-        )
-```
-
-Output:
-
-```text
-Low Stock: Dog Food
-```
-
----
-
-# 2️⃣4️⃣ JSON + List Comprehension
-
-Day 16 taught us List Comprehension.
-
-We can combine it with JSON.
-
-```python
-product_names = [
-    product["Name"]
-    for product in products
-]
-
-print(product_names)
-```
-
-Output:
-
-```text
-['Dog Food', 'Cat Food', 'Treats', 'Bones']
-```
-
----
-
-# 2️⃣5️⃣ JSON + Filtering
-
-Find expensive products.
+Expensive products:
 
 ```python
 expensive_products = [
@@ -865,21 +923,47 @@ Output:
 
 ```text
 [
-    {
-        'Name': 'Dog Food',
-        'Price': 1200,
-        'Quantity': 2
-    }
+    {'Name': 'Dog Food', 'Price': 1200, 'Quantity': 2}
 ]
 ```
 
 ---
 
-# 2️⃣6️⃣ JSON + Sorting
+# 2️⃣9️⃣ JSON + Low Stock
 
-Day 15 taught us sorting.
+Business Rule:
 
-We can sort JSON data after loading it into Python.
+```text
+Quantity < 3
+```
+
+Code:
+
+```python
+low_stock_products = [
+    product
+    for product in products
+    if product["Quantity"] < 3
+]
+
+print(low_stock_products)
+```
+
+Output:
+
+```text
+[
+    {'Name': 'Dog Food', 'Price': 1200, 'Quantity': 2}
+]
+```
+
+---
+
+# 3️⃣0️⃣ JSON + Sorting
+
+Day 15 lo sorting nerchukunnam.
+
+JSON data Python list ga convert ayyaka sorting easy.
 
 ```python
 sorted_products = sorted(
@@ -906,7 +990,41 @@ Dog Food 1200
 
 ---
 
-# 2️⃣7️⃣ Highest Revenue Product
+# 3️⃣1️⃣ Sort by Revenue
+
+```python
+sorted_products = sorted(
+    products,
+    key=lambda product:
+        product["Price"] * product["Quantity"],
+    reverse=True
+)
+
+for product in sorted_products:
+
+    revenue = (
+        product["Price"]
+        * product["Quantity"]
+    )
+
+    print(
+        product["Name"],
+        revenue
+    )
+```
+
+Output:
+
+```text
+Cat Food 2700
+Dog Food 2400
+Bones 2000
+Treats 1500
+```
+
+---
+
+# 3️⃣2️⃣ Find Highest Revenue Product
 
 ```python
 highest_revenue_product = max(
@@ -926,45 +1044,23 @@ Output:
 
 ---
 
-# 2️⃣8️⃣ JSON + Functions
+# 3️⃣3️⃣ JSON + Exception Handling
 
-We can use functions to process JSON data.
+Day 17 lo manam Exception Handling nerchukunnam.
 
-```python
-def calculate_revenue(product):
-
-    return (
-        product["Price"]
-        * product["Quantity"]
-    )
-
-
-for product in products:
-
-    revenue = calculate_revenue(product)
-
-    print(
-        product["Name"],
-        revenue
-    )
-```
-
-Output:
+JSON file missing ayithe:
 
 ```text
-Dog Food 2400
-Cat Food 2700
-Treats 1500
-Bones 2000
+FileNotFoundError
 ```
 
----
+JSON format wrong ayithe:
 
-# 2️⃣9️⃣ JSON + Exception Handling
+```text
+JSONDecodeError
+```
 
-Day 17 taught us Exception Handling.
-
-Now we can combine it with JSON.
+Handle cheyyachu.
 
 ```python
 import json
@@ -975,8 +1071,6 @@ try:
 
         products = json.load(file)
 
-        print(products)
-
 except FileNotFoundError:
 
     print("JSON file not found")
@@ -986,36 +1080,42 @@ except json.JSONDecodeError:
     print("Invalid JSON data")
 ```
 
-This makes our JSON processing safer.
+This is very important for reliable data processing.
 
 ---
 
-# 3️⃣0️⃣ What is `JSONDecodeError`?
+# 3️⃣4️⃣ Invalid JSON Example
 
-If a JSON file contains invalid JSON:
+Suppose JSON file lo:
 
 ```text
 {
     "Name": "Dog Food",
     "Price": 1200,
+}
 ```
 
-the JSON structure is incomplete.
+This is invalid JSON because trailing comma issue undi.
 
-Python may raise:
+When we try:
+
+```python
+json.load(file)
+```
+
+Python can raise:
 
 ```text
 JSONDecodeError
 ```
 
-We can handle it:
+Handle:
 
 ```python
 try:
 
     with open("products.json", "r") as file:
-
-        products = json.load(file)
+        data = json.load(file)
 
 except json.JSONDecodeError:
 
@@ -1024,10 +1124,184 @@ except json.JSONDecodeError:
 
 ---
 
-# 3️⃣1️⃣ Complete JSON Business Analysis
+# 3️⃣5️⃣ JSON Data Validation
+
+JSON data lo required fields unnayo check cheyyachu.
+
+```python
+for product in products:
+
+    if "Name" not in product:
+        print("Name is missing")
+
+    if "Price" not in product:
+        print("Price is missing")
+
+    if "Quantity" not in product:
+        print("Quantity is missing")
+```
+
+This is useful when processing external data.
+
+---
+
+# 3️⃣6️⃣ JSON + Type Conversion
+
+JSON generally numeric values ni number ga preserve cheyyagaladu.
+
+Example:
+
+```json
+{
+    "Price": 1200,
+    "Quantity": 2
+}
+```
+
+After:
+
+```python
+product = json.loads(data)
+```
+
+Python lo:
+
+```python
+product["Price"]
+```
+
+is an integer.
+
+Unlike CSV, every value automatically string ga read avvalsina avasaram ledu.
+
+Still, external JSON data ni process chesetappudu validation important.
+
+---
+
+# 3️⃣7️⃣ JSON vs CSV
+
+| Feature | CSV | JSON |
+|---|---|---|
+| Structure | Rows & Columns | Objects & Arrays |
+| Nested Data | Difficult | Easy |
+| Python Mapping | Rows | Dictionaries |
+| Common Use | Tables | APIs / Applications |
+| Python Module | `csv` | `json` |
+| Read | `csv.reader()` | `json.load()` |
+| Dictionary Read | `csv.DictReader()` | `json.load()` |
+
+Simple understanding:
+
+```text
+CSV → Tabular Data
+JSON → Structured / Nested Data
+```
+
+---
+
+# 3️⃣8️⃣ JSON Nested Data
+
+JSON lo nested data store cheyyachu.
+
+Example:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2,
+    "Supplier": {
+        "Name": "Pet Supplies Ltd",
+        "City": "Hyderabad"
+    }
+}
+```
+
+Python lo:
+
+```python
+product["Supplier"]["Name"]
+```
+
+Output:
+
+```text
+Pet Supplies Ltd
+```
+
+And:
+
+```python
+product["Supplier"]["City"]
+```
+
+Output:
+
+```text
+Hyderabad
+```
+
+This is one major difference between simple CSV and JSON.
+
+---
+
+# 3️⃣9️⃣ JSON Nested List
+
+JSON can also contain lists inside objects.
+
+Example:
+
+```json
+{
+    "Name": "Dog Food",
+    "Price": 1200,
+    "Quantity": 2,
+    "Categories": [
+        "Dog",
+        "Food",
+        "Pet"
+    ]
+}
+```
+
+Python:
+
+```python
+print(product["Categories"])
+```
+
+Output:
+
+```text
+['Dog', 'Food', 'Pet']
+```
+
+Access individual value:
+
+```python
+print(product["Categories"][0])
+```
+
+Output:
+
+```text
+Dog
+```
+
+---
+
+# 4️⃣0️⃣ Complete JSON Business Analysis
 
 ```python
 import json
+
+
+def calculate_revenue(product):
+
+    return (
+        product["Price"]
+        * product["Quantity"]
+    )
 
 
 try:
@@ -1037,56 +1311,38 @@ try:
         products = json.load(file)
 
 
-except FileNotFoundError:
-
-    print("JSON file not found")
-
-    products = []
+    total_revenue = 0
+    total_stock = 0
 
 
-except json.JSONDecodeError:
+    for product in products:
 
-    print("Invalid JSON data")
+        revenue = calculate_revenue(product)
 
-    products = []
+        total_revenue += revenue
 
+        total_stock += product["Quantity"]
 
-total_revenue = 0
-total_stock = 0
-
-
-for product in products:
-
-    revenue = (
-        product["Price"]
-        * product["Quantity"]
-    )
-
-    total_revenue += revenue
-    total_stock += product["Quantity"]
-
-    print(
-        product["Name"],
-        "Revenue:",
-        revenue
-    )
+        print(
+            product["Name"],
+            "Revenue:",
+            revenue
+        )
 
 
-expensive_products = [
-    product["Name"]
-    for product in products
-    if product["Price"] >= 1000
-]
+    expensive_products = [
+        product["Name"]
+        for product in products
+        if product["Price"] >= 1000
+    ]
 
 
-low_stock_products = [
-    product["Name"]
-    for product in products
-    if product["Quantity"] < 3
-]
+    low_stock_products = [
+        product["Name"]
+        for product in products
+        if product["Quantity"] < 3
+    ]
 
-
-if products:
 
     highest_price_product = max(
         products,
@@ -1094,11 +1350,28 @@ if products:
             product["Price"]
     )
 
+
     highest_revenue_product = max(
         products,
         key=lambda product:
             product["Price"]
             * product["Quantity"]
+    )
+
+
+    print()
+    print("Total Products:", len(products))
+    print("Total Revenue:", total_revenue)
+    print("Total Stock:", total_stock)
+
+    print(
+        "Expensive Products:",
+        expensive_products
+    )
+
+    print(
+        "Low Stock Products:",
+        low_stock_products
     )
 
     print(
@@ -1112,31 +1385,25 @@ if products:
     )
 
 
-print("Total Products:", len(products))
-print("Total Revenue:", total_revenue)
-print("Total Stock:", total_stock)
-print(
-    "Expensive Products:",
-    expensive_products
-)
-print(
-    "Low Stock Products:",
-    low_stock_products
-)
+except FileNotFoundError:
+
+    print("JSON file not found")
+
+
+except json.JSONDecodeError:
+
+    print("Invalid JSON format")
 ```
 
 ---
 
-# 3️⃣2️⃣ Expected Output
+# 4️⃣1️⃣ Expected Output
 
 ```text
 Dog Food Revenue: 2400
 Cat Food Revenue: 2700
 Treats Revenue: 1500
 Bones Revenue: 2000
-
-Highest Price Product: Dog Food
-Highest Revenue Product: Cat Food
 
 Total Products: 4
 Total Revenue: 8600
@@ -1145,288 +1412,118 @@ Total Stock: 14
 Expensive Products: ['Dog Food']
 
 Low Stock Products: ['Dog Food']
+
+Highest Price Product: Dog Food
+Highest Revenue Product: Cat Food
 ```
 
 ---
 
-# 3️⃣3️⃣ Python ↔ JSON Conversion
+# 4️⃣2️⃣ JSON Processing Flow
 
-Remember these four functions carefully.
+Today we learned:
 
 ```text
-Python → JSON String
-
-json.dumps()
+JSON Data
+    ↓
+Read / Parse
+    ↓
+Python Object
+    ↓
+Dictionary / List
+    ↓
+Validate
+    ↓
+Transform
+    ↓
+Filter
+    ↓
+Sort
+    ↓
+Calculate
+    ↓
+Business Analysis
 ```
 
-```text
-JSON String → Python
+This is a very important Data Engineering pattern.
 
+---
+
+# 4️⃣3️⃣ API Connection
+
+Later manam APIs nerchukuntam.
+
+API usually JSON response ivvachu.
+
+Example:
+
+```text
+Python
+   ↓
+API Request
+   ↓
+JSON Response
+   ↓
 json.loads()
+   ↓
+Python Data
+   ↓
+Process
+   ↓
+Store
 ```
 
-```text
-Python → JSON File
-
-json.dump()
-```
-
-```text
-JSON File → Python
-
-json.load()
-```
-
-Quick memory trick:
-
-```text
-s = string
-no s = file
-```
-
-So:
-
-```text
-loads  → string → Python
-dumps  → Python → string
-
-load   → file → Python
-dump   → Python → file
-```
-
----
-
-# 3️⃣4️⃣ JSON vs CSV
-
-| Feature | CSV | JSON |
-|---|---|---|
-| Structure | Rows & Columns | Objects & Arrays |
-| Best for | Tabular data | Structured / nested data |
-| Python module | `csv` | `json` |
-| Dictionary support | `DictReader` | Native objects |
-| Nested data | Limited | Supported |
-| APIs | Less common | Very common |
-
-Example CSV:
-
-```text
-Name,Price,Quantity
-Dog Food,1200,2
-Cat Food,900,3
-```
-
-Example JSON:
-
-```json
-[
-    {
-        "Name": "Dog Food",
-        "Price": 1200,
-        "Quantity": 2
-    },
-    {
-        "Name": "Cat Food",
-        "Price": 900,
-        "Quantity": 3
-    }
-]
-```
-
----
-
-# 3️⃣5️⃣ JSON Nested Data
-
-JSON can contain nested objects.
-
-Example:
-
-```json
-{
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Category": {
-        "Type": "Food",
-        "Animal": "Dog"
-    }
-}
-```
-
-Python:
+For example:
 
 ```python
-product = {
-    "Name": "Dog Food",
-    "Price": 1200,
-    "Category": {
-        "Type": "Food",
-        "Animal": "Dog"
-    }
-}
+data = response.text
+
+products = json.loads(data)
 ```
 
-Access nested data:
+Then:
 
 ```python
-print(product["Category"]["Type"])
+for product in products:
+    print(product["Name"])
 ```
 
-Output:
-
-```text
-Food
-```
-
-This is one reason JSON is powerful for APIs and real-world data.
+So today's JSON knowledge future lo **API data processing** ki direct ga useful avutundi.
 
 ---
 
-# 3️⃣6️⃣ Common Mistakes
+# 4️⃣4️⃣ Data Engineering Connection 🔥
 
-### ❌ Mistake 1 — Confusing `load()` and `loads()`
+Data Engineer ga manam different sources nundi data receive cheyyali.
 
-Remember:
-
-```text
-load  → file
-loads → string
-```
-
----
-
-### ❌ Mistake 2 — Confusing `dump()` and `dumps()`
-
-Remember:
-
-```text
-dump  → file
-dumps → string
-```
-
----
-
-### ❌ Mistake 3 — Forgetting `import json`
-
-Correct:
-
-```python
-import json
-```
-
----
-
-### ❌ Mistake 4 — Invalid JSON
-
-JSON uses:
-
-```json
-{
-    "Name": "Dog Food"
-}
-```
-
-Make sure the JSON structure is valid.
-
----
-
-### ❌ Mistake 5 — Wrong Key
-
-If JSON contains:
-
-```json
-{
-    "Price": 1200
-}
-```
-
-use:
-
-```python
-product["Price"]
-```
-
-not:
-
-```python
-product["price"]
-```
-
-Python dictionary keys are case-sensitive.
-
----
-
-### ❌ Mistake 6 — Processing Empty Data
-
-Before using:
-
-```python
-max(products)
-```
-
-make sure the list is not empty.
-
-Example:
-
-```python
-if products:
-
-    highest = max(
-        products,
-        key=lambda product:
-            product["Price"]
-    )
-```
-
----
-
-# 3️⃣7️⃣ Day 19 vs Day 20
-
-| Day | Main Concept |
-|---|---|
-| Day 19 | CSV Data Processing |
-| Day 20 | JSON Data Processing |
-
-### Day 19
+Sources:
 
 ```text
 CSV
- ↓
-Rows
- ↓
-Columns
- ↓
-DictReader
- ↓
-Data Processing
+JSON
+API
+Database
+Logs
+Applications
 ```
 
-### Day 20
+JSON especially important for:
 
 ```text
-JSON
- ↓
-Objects
- ↓
-Arrays
- ↓
-json.load()
- ↓
-Data Processing
+REST APIs
+Web Applications
+Cloud Services
+Microservices
+Data Exchange
+Configuration Files
 ```
 
-Both are important data formats.
-
----
-
-# 3️⃣8️⃣ Data Engineering Connection 🔥
-
-JSON is extremely important in modern Data Engineering.
-
-A typical API workflow may look like:
+Typical pipeline:
 
 ```text
 API
  ↓
-JSON Response
+JSON
  ↓
 Python
  ↓
@@ -1441,72 +1538,169 @@ Load
 Database
 ```
 
-For example:
+This is an actual Data Engineering workflow.
+
+---
+
+# 4️⃣5️⃣ Day 18 → Day 19 → Day 20
 
 ```text
-Customer API
+Day 18
+File Handling
       ↓
-   JSON Data
+Day 19
+CSV Data Processing
       ↓
-Python Processing
-      ↓
-Data Validation
-      ↓
-Transformation
-      ↓
-Database
+Day 20
+JSON Data Processing
 ```
 
-You are now learning the basic skills needed to work with:
+We are now moving from basic Python file operations into **structured data processing**.
+
+---
+
+# 4️⃣6️⃣ Important JSON Functions
+
+| Function | Purpose |
+|---|---|
+| `json.loads()` | JSON String → Python |
+| `json.dumps()` | Python → JSON String |
+| `json.load()` | JSON File → Python |
+| `json.dump()` | Python → JSON File |
+
+### Easy Memory Trick
 
 ```text
-CSV
-JSON
-APIs
-Pandas
-SQL
-ETL
-Data Pipelines
-Cloud Data
+s = String
+```
+
+Therefore:
+
+```text
+loads()  → String → Python
+dumps()  → Python → String
+```
+
+Without `s`:
+
+```text
+load()   → File → Python
+dump()   → Python → File
 ```
 
 ---
 
-# 3️⃣9️⃣ Day 20 Practice Tasks
+# 4️⃣7️⃣ Common Mistakes
 
-## 🟢 Task 1 — Create JSON
+### ❌ Mistake 1 — Forgetting `import json`
 
-Create:
+Wrong:
 
-```text
-product.json
+```python
+data = json.loads(text)
 ```
 
-with:
+Correct:
+
+```python
+import json
+```
+
+---
+
+### ❌ Mistake 2 — Confusing `load()` and `loads()`
+
+Remember:
+
+```text
+load()  → File
+loads() → String
+```
+
+---
+
+### ❌ Mistake 3 — Confusing `dump()` and `dumps()`
+
+Remember:
+
+```text
+dump()  → File
+dumps() → String
+```
+
+---
+
+### ❌ Mistake 4 — Invalid JSON
+
+JSON requires proper syntax.
+
+Correct:
 
 ```json
 {
     "Name": "Dog Food",
-    "Price": 1200,
-    "Quantity": 2
+    "Price": 1200
 }
 ```
 
 ---
 
-## 🟢 Task 2 — Read JSON
+### ❌ Mistake 5 — Using Single Quotes in JSON
+
+Python dictionary:
+
+```python
+{
+    "Name": "Dog Food"
+}
+```
+
+JSON standard syntax uses double quotes:
+
+```json
+{
+    "Name": "Dog Food"
+}
+```
+
+---
+
+### ❌ Mistake 6 — Forgetting Type/Structure Validation
+
+External JSON data always trusted ani assume cheyyakudadhu.
+
+Check required fields:
+
+```python
+if "Price" in product:
+    print(product["Price"])
+```
+
+---
+
+# 4️⃣8️⃣ Day 20 Practice Tasks
+
+## 🟢 Task 1 — JSON String
+
+Create a JSON string containing:
+
+```text
+Name
+Price
+Quantity
+```
 
 Use:
 
 ```python
-json.load()
+json.loads()
 ```
 
-and print the data.
+to convert it into a Python dictionary.
 
 ---
 
-## 🟢 Task 3 — Access Values
+## 🟢 Task 2 — Access Values
 
 Print:
 
@@ -1516,24 +1710,23 @@ Price
 Quantity
 ```
 
+from the converted dictionary.
+
 ---
 
-## 🟢 Task 4 — Create Product List
+## 🟢 Task 3 — JSON List
 
-Create a JSON file containing:
+Create a JSON list containing 4 products.
 
-```text
-Dog Food
-Cat Food
-Treats
-Bones
+Convert it using:
+
+```python
+json.loads()
 ```
 
-with price and quantity.
-
 ---
 
-## 🟡 Task 5 — Calculate Revenue
+## 🟡 Task 4 — Product Revenue
 
 Calculate:
 
@@ -1545,29 +1738,21 @@ for every product.
 
 ---
 
-## 🟡 Task 6 — Total Revenue
+## 🟡 Task 5 — Total Revenue
 
-Calculate:
-
-```text
-Total Revenue
-```
+Calculate total revenue.
 
 ---
 
-## 🟡 Task 7 — Total Stock
+## 🟡 Task 6 — Total Stock
 
-Calculate:
-
-```text
-Total Stock
-```
+Calculate total stock.
 
 ---
 
-## 🟠 Task 8 — Expensive Products
+## 🟡 Task 7 — Expensive Products
 
-Find:
+Find products where:
 
 ```text
 Price >= 1000
@@ -1575,9 +1760,9 @@ Price >= 1000
 
 ---
 
-## 🟠 Task 9 — Low Stock Products
+## 🟠 Task 8 — Low Stock
 
-Find:
+Find products where:
 
 ```text
 Quantity < 3
@@ -1585,42 +1770,81 @@ Quantity < 3
 
 ---
 
-## 🟠 Task 10 — Highest Revenue
+## 🟠 Task 9 — Highest Revenue
 
 Find the product with the highest revenue.
 
 ---
 
-## 🔴 Task 11 — Sort Products
+## 🟠 Task 10 — JSON File
 
-Sort JSON products by:
+Create:
 
 ```text
-Price
+products.json
 ```
 
-from highest to lowest.
+Write product data using:
+
+```python
+json.dump()
+```
+
+Then read it using:
+
+```python
+json.load()
+```
 
 ---
 
-## 🔴 Task 12 — Mini Project
+# 4️⃣9️⃣ 🔴 Day 20 Mini Project
 
-Build a:
+# 🐾 Life Care Pet Zone — JSON Product Analysis
 
-# 🐾 Life Care Pet Zone JSON Analysis System
-
-Program flow:
+Create:
 
 ```text
-Read products.json
+products.json
+```
+
+with:
+
+```json
+[
+    {
+        "Name": "Dog Food",
+        "Price": 1200,
+        "Quantity": 2
+    },
+    {
+        "Name": "Cat Food",
+        "Price": 900,
+        "Quantity": 3
+    },
+    {
+        "Name": "Treats",
+        "Price": 300,
+        "Quantity": 5
+    },
+    {
+        "Name": "Bones",
+        "Price": 500,
+        "Quantity": 4
+    }
+]
+```
+
+Your Python program should:
+
+```text
+Read JSON File
       ↓
-Load JSON
+Convert JSON
       ↓
 Validate Data
       ↓
-Convert / Process Data
-      ↓
-Calculate Revenue
+Calculate Product Revenue
       ↓
 Calculate Total Revenue
       ↓
@@ -1641,47 +1865,34 @@ Display Business Report
 
 ---
 
-# 📌 Day 20 Quick Reference
+# 5️⃣0️⃣ Day 20 Challenge 🚀
+
+Create a function:
 
 ```python
-import json
+def analyze_products(products):
 ```
 
-### JSON String → Python
+The function should return:
+
+```text
+Total Products
+Total Revenue
+Total Stock
+Highest Price Product
+Lowest Price Product
+Highest Revenue Product
+Expensive Products
+Low Stock Products
+```
+
+Then call:
 
 ```python
-json.loads(data)
+analyze_products(products)
 ```
 
-### Python → JSON String
-
-```python
-json.dumps(data)
-```
-
-### JSON File → Python
-
-```python
-json.load(file)
-```
-
-### Python → JSON File
-
-```python
-json.dump(data, file)
-```
-
-### Pretty JSON
-
-```python
-json.dumps(data, indent=4)
-```
-
-or:
-
-```python
-json.dump(data, file, indent=4)
-```
+This challenge combines almost everything you have learned so far.
 
 ---
 
@@ -1692,26 +1903,25 @@ Today I learned:
 - ✅ What is JSON
 - ✅ JSON objects
 - ✅ JSON arrays
-- ✅ JSON data types
-- ✅ JSON list of objects
+- ✅ JSON keys and values
 - ✅ Python `json` module
 - ✅ `json.loads()`
 - ✅ `json.dumps()`
 - ✅ `json.load()`
 - ✅ `json.dump()`
-- ✅ Creating JSON files
-- ✅ Reading JSON files
-- ✅ Writing JSON files
-- ✅ Processing JSON data
-- ✅ JSON + dictionaries
-- ✅ JSON + lists
+- ✅ JSON string processing
+- ✅ JSON file processing
+- ✅ List of dictionaries
+- ✅ JSON nested data
 - ✅ JSON + functions
-- ✅ JSON + comprehensions
 - ✅ JSON + filtering
 - ✅ JSON + sorting
+- ✅ JSON + `max()`
+- ✅ JSON + business logic
 - ✅ JSON + exception handling
-- ✅ Revenue calculation
-- ✅ Business analysis
+- ✅ JSON data validation
+- ✅ API data concept
+- ✅ Data Engineering workflow
 
 ---
 
@@ -1748,7 +1958,7 @@ The next topic is:
 
 ## 📦 Python Modules & Packages
 
-We will learn how to organize Python code into reusable files and modules.
+We will learn how to organize Python code into reusable files and use modules.
 
 ```text
 Python Basics
